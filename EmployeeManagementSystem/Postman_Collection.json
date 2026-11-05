@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "e8f1c37b-4e3f-4b8a-9a3f-1e2c3d4e5f61",
+		"name": "Employee Management System API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7100/api/employees?page=1&pageSize=10",
+					"protocol": "https",
+					"host": ["localhost"],
+					"port": "7100",
+					"path": ["api", "employees"],
+					"query": [
+						{ "key": "page", "value": "1" },
+						{ "key": "pageSize", "value": "10" }
+					]
+				}
+			}
+		},
+		{
+			"name": "Create Employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{ "key": "Content-Type", "value": "application/json" }
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"employeeCode\": \"EMP-2001\",\n  \"firstName\": \"Alice\",\n  \"lastName\": \"Johnson\",\n  \"email\": \"alice.johnson@ems.com\",\n  \"phone\": \"+1-555-8822\",\n  \"dateOfBirth\": \"1992-08-20T00:00:00Z\",\n  \"gender\": 1,\n  \"address\": \"789 Innovation Way\",\n  \"joiningDate\": \"2026-01-15T00:00:00Z\",\n  \"salary\": 92000,\n  \"status\": 0,\n  \"departmentId\": 1,\n  \"designationId\": 1\n}"
+				},
+				"url": {
+					"raw": "https://localhost:7100/api/employees",
+					"protocol": "https",
+					"host": ["localhost"],
+					"port": "7100",
+					"path": ["api", "employees"]
+				}
+			}
+		}
+	]
+}
